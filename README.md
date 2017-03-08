@@ -7,7 +7,7 @@ Software Development Workshop I(For Y1 Student) **Group Project**
 - Xianggao Gu
 
 ## Potential Option
-### Whac-A-Mole
+### Whac-A-Mole **Selected**
 ![Whac-A-Mole](https://cdn.ecwuuuuu.com/17-2-24/75420786-file_1487907410071_178d3.png)
 
 #### Basic Rules
