@@ -1,5 +1,5 @@
 # SDWI Group Project
-Software Development Workshop I(For Y1 Student) **Group Project**
+Software Development Workshop I(For Y1 Student) **Group Project － Whac-A-Mole**
 
 ## Menber
 - Zhenghao Wu
