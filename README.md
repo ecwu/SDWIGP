@@ -1,5 +1,5 @@
 # SDWI Group Project
-Software Development Workshop I(For Y1 Student) **Group Project**
+Software Development Workshop I(For Y1 Student) **Group Project － Whac-A-Mole**
 
 ## Menber
 - Zhenghao Wu
@@ -7,8 +7,10 @@ Software Development Workshop I(For Y1 Student) **Group Project**
 - Xianggao Gu
 
 ## Potential Option
-### Whac-A-Mole
+### Whac-A-Mole `SELETED`
 ![Whac-A-Mole](https://cdn.ecwuuuuu.com/17-2-24/75420786-file_1487907410071_178d3.png)
+
+[First Design & Simple Interface](https://www.fluidui.com/editor/live/preview/p_zyPc2q51vx9mUX7aroxFltwEnfcDpynD.1489041513142)
 
 #### Basic Rules
 1. Duration of one round: **60 seconds** (The game will last for 60 seconds before it is over.)
