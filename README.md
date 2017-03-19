@@ -13,6 +13,8 @@ Software Development Workshop I(For Y1 Student) **Group Project － Whac-A-Mole*
 [First Design & Simple Interface](https://www.fluidui.com/editor/live/preview/p_zyPc2q51vx9mUX7aroxFltwEnfcDpynD.1489041513142)
 
 ![User Interface](https://cdn.ecwuuuuu.com/17-3-19/78587216-file_1489915344907_10c69.jpg)
+
+![Logic Design](https://cdn.ecwuuuuu.com/17-3-19/5282605-file_1489915472893_160d.png)
 #### Basic Rules
 1. Duration of one round: **60 seconds** (The game will last for 60 seconds before it is over.)
 2. Number of holes: **9**
