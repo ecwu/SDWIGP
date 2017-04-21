@@ -1,0 +1,106 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"><!-- Website using the XHTML 1.0 Standard -->
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><!-- using the UTF-8 Encoding Standard -->
+	<title>Whac-A-Mole | SDWI 2017 Group Project</title>
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
+	<link rel="stylesheet" type="text/css" href="css/style.css" />
+	<link rel="stylesheet" type="text/css" href="css/custom.css" />
+</head>
+<body>
+<form>
+<div class="container">
+	<div class="row">
+		<div class="col-md-9">
+			<h1 class="title">Whac A Mole <span class="btn btn-success">Orginal Design</span></h1>
+		</div>
+		<div class="row btnset">
+			<div class="col-md-4">
+				<button id="playButton" type="button" class="btn btn-success" onClick="gameStartOrReplay()">Play</button>
+			</div>
+			<div class="col-md-4">
+				<button type="button" class="btn btn-primary" onclick="Help()">Help</button>
+			</div>
+			<div class="col-md-4">
+				<button type="button" class="btn btn-warning" onClick="Exit()">Exit</button>
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-8">
+			<div class="row holerow">
+				<div class="col-md-4">
+					<img class="img-fluid" id="hole1" src="img/hole.png" alt="no" onclick="afterClick(1)" />
+				</div>
+				<div class="col-md-4">
+					<img class="img-fluid" id="hole2" src="img/hole.png" alt="no" onclick="afterClick(2)" />
+				</div>
+				<div class="col-md-4">
+					<img class="img-fluid" id="hole3" src="img/hole.png" alt="no" onclick="afterClick(3)" />
+				</div>
+			</div>
+			<div class="row holerow">
+				<div class="col-md-4">
+					<img class="img-fluid" id="hole4" src="img/hole.png" alt="no" onclick="afterClick(4)" />
+				</div>
+				<div class="col-md-4">
+					<img class="img-fluid" id="hole5" src="img/hole.png" alt="no" onclick="afterClick(5)" />
+				</div>
+				<div class="col-md-4">
+					<img class="img-fluid" id="hole6" src="img/hole.png" alt="no" onclick="afterClick(6)" />
+				</div>
+			</div>
+			<div class="row holerow">
+				<div class="col-md-4">
+					<img class="img-fluid" id="hole7" src="img/hole.png" alt="no" onclick="afterClick(7)" />
+				</div>
+				<div class="col-md-4">
+					<img class="img-fluid" id="hole8" src="img/hole.png" alt="no" onclick="afterClick(8)" />
+				</div>
+				<div class="col-md-4">
+					<img class="img-fluid" id="hole9" src="img/hole.png" alt="no" onclick="afterClick(9)" />
+				</div>
+			</div>
+		</div>
+		<div class="col-md-4 leftinfo">
+			<div class="card">
+				<div class="card-block">
+					<h4 class="card-title">Timer</h4>
+					<input type="text" id="remainTime" size="36" value="60" readonly="readonly">
+				</div>
+			</div>
+			<div class="card">
+				<div class="card-block">
+					<h4 class="card-title">Score</h4>
+					<input type="text" id="score" size="36" value="0" readonly="readonly">
+				</div>
+			</div>
+			<div class="card">
+				<div class="card-block">
+					<h4 class="card-title">Number of strick</h4>
+					<input type="text" id="numberOfStrick" size="36" value="0" readonly="readonly">
+				</div>
+			</div>
+			<div class="card card-inverse card-primary mb-3">
+				<div class="card-block">
+					<blockquote class="card-blockquote">
+						<p>&copy; Copyright 2017 All Right Reserved.</p>
+						<p>Design &amp; Developed by</p>
+						<ul>
+							<li>Zhenghao Wu (l630003054)</li>
+							<li>Guozhen Wang (l630003048)</li>
+							<li>Xianggao Gu (l630003015)</li>
+						</ul>
+						<footer> <cite title="Source Title">Group 1 @ SDWI 2017</cite></footer>
+					</blockquote>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+</form>
+</body>
+<script type="text/javascript" src="js/script.js"></script>
+</html>
