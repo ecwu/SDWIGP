@@ -1,88 +1,70 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-
-<html xmlns="http://www.w3.org/1999/xhtml"><!-- Website using the XHTML 1.0 Standard -->
+<!DOCTYPE html><!-- A website using HTML&HTML5 -->
+<html lang="en"><!-- Standard language:English -->
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><!-- using the UTF-8 Encoding Standard -->
-	<title>Whac-A-Mole | SDWI 2017 Group Project</title>
-	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
-	<link rel="stylesheet" type="text/css" href="css/style.css" />
-	<link rel="stylesheet" type="text/css" href="css/custom.css" />
+	<title>Whac-A-Mole | SDWI 2017 Group Project</title><!-- Title for the Website page -->
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" /><!-- External CSS stylesheet Bootstrap 4 A6 -->
+	<link rel="stylesheet" type="text/css" href="css/style.css" /><!-- External Customer CSS -->
 </head>
-<body>
+<body onload="showUsername();"><!-- load a username input box when everything loaded -->
 <div class="container">
 	<div class="row">
 		<div class="col-md-9">
-			<h1 class="title">Whac A Mole <span class="btn btn-success">Orginal Design</span></h1>
+			<h1 class="title">Whac A Mole
+				<span class="btn btn-primary" id="showScoreBtn" data-toggle="modal" data-target="#scoreModal" style="display: none;">Score</span><!-- A not displayed btn for debugging -->
+				<span class="btn btn-primary" id="showUsernameBtn" data-toggle="modal" data-target="#logInAs">Login as:</span><!-- Show current Player name -->
+			</h1>
 		</div>
-		<div class="row btnset">
+		<div class="row btnset"><!-- Control Panel -->
 			<div class="col-md-4">
-				<button type="button" class="btn btn-success">Play</button>
+				<button type="button" class="btn btn-success" onclick="startGame();" id="startBtn">Play</button><!-- The btn will change if you clicked -->
 			</div>
 			<div class="col-md-4">
-				<button type="button" class="btn btn-primary">Help</button>
+                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#helpModal">Help</button><!-- A help window will pop-up -->
 			</div>
 			<div class="col-md-4">
-				<button type="button" class="btn btn-warning">Exit</button>
+                <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#exitModal">Exit</button><!-- Exit the game and go to uic Homepage -->
 			</div>
 		</div>
 	</div>
-	<div class="row">
+	<div class="row"><!-- Mole-Hole Area -->
 		<div class="col-md-8">
-			<div class="row holerow">
-				<div class="col-md-4">
-					<img class="img-fluid" src="https://placehold.it/300x300" alt="hole1" />
-				</div>
-				<div class="col-md-4">
-					<img class="img-fluid" src="https://placehold.it/300x300" alt="hole2" />
-				</div>
-				<div class="col-md-4">
-					<img class="img-fluid" src="https://placehold.it/300x300" alt="hole3" />
-				</div>
+			<div class="row holerow"><!-- first row -->
+				<div class="col-md-4"><img class="img-fluid" src="img/0.png" alt="no" id="hole1" onclick="clickMole(id)"/></div>
+				<div class="col-md-4"><img class="img-fluid" src="img/0.png" alt="no" id="hole2" onclick="clickMole(id)"/></div>
+				<div class="col-md-4"><img class="img-fluid" src="img/0.png" alt="no" id="hole3" onclick="clickMole(id)"/></div>
 			</div>
-			<div class="row holerow">
-				<div class="col-md-4">
-					<img class="img-fluid" src="https://placehold.it/300x300" alt="hole4" />
-				</div>
-				<div class="col-md-4">
-					<img class="img-fluid" src="https://placehold.it/300x300" alt="hole5" />
-				</div>
-				<div class="col-md-4">
-					<img class="img-fluid" src="https://placehold.it/300x300" alt="hole6" />
-				</div>
+			<div class="row holerow"><!-- second row -->
+				<div class="col-md-4"><img class="img-fluid" src="img/0.png" alt="no" id="hole4" onclick="clickMole(id)"/></div>
+				<div class="col-md-4"><img class="img-fluid" src="img/0.png" alt="no" id="hole5" onclick="clickMole(id)"/></div>
+				<div class="col-md-4"><img class="img-fluid" src="img/0.png" alt="no" id="hole6" onclick="clickMole(id)"/></div>
 			</div>
-			<div class="row holerow">
-				<div class="col-md-4">
-					<img class="img-fluid" src="https://placehold.it/300x300" alt="hole7" />
-				</div>
-				<div class="col-md-4">
-					<img class="img-fluid" src="https://placehold.it/300x300" alt="hole8" />
-				</div>
-				<div class="col-md-4">
-					<img class="img-fluid" src="https://placehold.it/300x300" alt="hole9" />
-				</div>
+			<div class="row holerow"><!-- third row -->
+				<div class="col-md-4"><img class="img-fluid" src="img/0.png" alt="no" id="hole7" onclick="clickMole(id)"/></div>
+				<div class="col-md-4"><img class="img-fluid" src="img/0.png" alt="no" id="hole8" onclick="clickMole(id)"/></div>
+				<div class="col-md-4"><img class="img-fluid" src="img/0.png" alt="no" id="hole9" onclick="clickMole(id)"/></div>
 			</div>
 		</div>
 		<div class="col-md-4 leftinfo">
-			<div class="card">
+			<div class="card"><!-- Area For timer -->
 				<div class="card-block">
 					<h4 class="card-title">Timer</h4>
-					<p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+					<p class="card-text" id="displayTimer">01:00</p>
 				</div>
 			</div>
-			<div class="card">
+			<div class="card"><!-- Area for player's score -->
 				<div class="card-block">
 					<h4 class="card-title">Score</h4>
-					<p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+					<p class="card-text" id="displayScore">0</p>
 				</div>
 			</div>
-			<div class="card">
+			<div class="card"><!-- Area for Number of Strikes -->
 				<div class="card-block">
-					<h4 class="card-title">Special title treatment</h4>
-					<p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+					<h4 class="card-title">Number of Strikes</h4>
+					<p class="card-text" id="displayStrikes">0</p>
 				</div>
 			</div>
-			<div class="card card-inverse card-primary mb-3">
+			<div class="card card-inverse card-primary mb-3"><!-- Copyright and Member Card -->
 				<div class="card-block">
 					<blockquote class="card-blockquote">
 						<p>&copy; Copyright 2017 All Right Reserved.</p>
@@ -98,7 +80,136 @@
 			</div>
 		</div>
 	</div>
+    <div class="modal fade" id="helpModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true"><!-- Help Window -->
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button><!-- Close icon -->
+                    <h4 class="modal-title" id="helpLabel"></h4>
+                </div>
+                <div class="modal-body">
+                    <p>Whac-A-Mole is an interesting casual game which you should use your mouse to click on the pop-up moles.</p><!-- Description -->
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-md-3">
+                                <img class="img-fluid" src="img/0.png" alt="no"/>
+                            </div>
+                            <div class="col-md-9"><!-- Mole Hole introduction -->
+                                <p class="figure-caption">Mole hole</p>
+                                <p>Mole hole is where the mole will pop up.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <br>
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-md-3">
+                                <img class="img-fluid" src="img/1.png" alt="no"/>
+                            </div>
+                            <div class="col-md-9"><!-- Mole introduction -->
+                                <p class="figure-caption">Mole</p>
+                                <p>When you hit a mole, Your score will increase 1.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <br>
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-md-3">
+                                <img class="img-fluid" src="img/3.png" alt="no"/>
+                            </div>
+                            <div class="col-md-9"><!-- Hit Mole introduction -->
+                            	<p class="figure-caption">Hit mole</p>
+                                <p>after you hit the mole, mole will distortion.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <br>
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-md-3">
+                                <img class="img-fluid" src="img/2.png" alt="no"/>
+                            </div>
+                            <div class="col-md-9"><!-- Bad mole Introduction -->
+                            	<p class="figure-caption">Bad Mole</p>
+                                <p>When you hit a bad mole, Your score will decrease 1.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal"> I know! </button><!-- Close btn -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="exitModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true"><!-- Exit comfirm Window -->
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title" id="exitLabel"></h4>
+                </div>
+                <div class="modal-body">
+                    <p>Are you sure you wanna leave?</p><!-- Question. -->
+                </div>
+                <div class="modal-footer"><!-- Btn Group -->
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal" aria-hidden="true"> Stay here. </button>
+                    <a href="http://uic.edu.hk" class="btn btn-danger"> I am leaving. </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="scoreModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true"><!-- Score Window -->
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title" id="scoreLabel">Time Over!</h4>
+                </div>
+                <div class="modal-body">
+                    <h5>Well done! <span id="username3"></span>, Your Final Score is :</h5><!-- Show your final score and Number of Strike -->
+                    <p id="finalScore"></p>
+                </div>
+				<form id="iVForm" action="writedata.php" method="get"><!-- Form for php upload -->
+					<input class="form-control" style="display:none;" type="text" name="uploadUsername" id="un"><!-- not visiable -->
+					<input class="form-control" style="display:none;" type="text" name="uploadNumberOfStrikes" id="nos">
+					<input class="form-control" style="display:none;" type="text" name="uploadScore" id="sc">
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal" aria-hidden="true"> Stay here. </button>
+                        <input type="submit" class="btn btn-success" value="Upload the Score." onmousedown="beforeSubmit()"/><!-- Upload btn -->
+                    </div>
+				</form>
+            </div>
+        </div>
+    </div>
+	<div class="modal fade" id="logInAs" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true"><!-- Welcome window(input player name) -->
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h4 class="modal-title" id="welcomeLabel">Welcome!</h4>
+				</div>
+				<div class="modal-body">
+					<h5>Please Input your name:</h5>
+					<p class="figure-caption">Your current name: <span id="username1"></span></p>
+					<form>
+						<div class="form-group">
+							<input type="text" class="form-control" id="inputUsername" placeholder="Your Username (English letters Only)" oninput="changeUsername(id)">
+							<p class="figure-caption" style="color:#ff4a50" id="usernameAlert"></p><!-- Error User name alert -->
+						</div>
+					</form>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-info" data-dismiss="modal" aria-hidden="true" onclick="saveUsername('Anonymous')"> Play as Anonymous </button>
+					<button type="button" id="submitId" disabled="disabled" class="btn btn-success" data-dismiss="modal" aria-hidden="true" onclick="saveUsername(name)"> Play as <span id="username2"></span></button><!-- Username comfirm -->
+				</div>
+			</div>
+		</div>
+	</div>
 </div>
-</body>
+</body><!-- External JS -->
 <script type="text/javascript" src="js/script.js"></script>
+<script type="text/javascript" src="js/jquery-3.2.0.min.js"></script>
+<script type="text/javascript" src="http://cdn.bootcss.com/tether/1.4.0/js/tether.min.js"></script><!-- a useless js for not pop the error -->
+<script type="text/javascript" src="js/bootstrap.min.js"></script><!-- A js for the pop up windows -->
 </html>
